@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat&family=Crete+Round&family=Pathway+Gothic+One&family=Russo+One&display=swap"
+        rel="stylesheet">
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: #E5E5E5;
+    overflow-x: hidden;
+}
+
+/* header top nav starts */
+.top-nav{
+    width: 100vw;
+    height: 50px;
+    background: #E5E5E5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 2px solid white;
+    padding: 0 20px;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+}
+.top-nav .top-left{
+    display: flex;
+}
+.top-nav .top-left nav{
+    padding-left: 100px;
+}
+
+h3.alpha{
+    color: black;
+    font-family: 'Russo One', sans-serif;
+    font-size: 36px;
+}
+
+.top-nav nav ul{
+    display: flex;
+    list-style: none;
+    padding: 13px;
+}
+.top-nav nav ul li a{
+    text-decoration:  none;
+    color: black;
+    font-family: 'Crete Round', serif;
+    padding: 0 10px;
+}
+.top-nav nav ul li a:hover{
+    color: #14213D;
+}
+.top-right img{
+    border: 1px solid white;
+    padding: 3px;
+}
+/* Sidenav */
+#menu-close-btn{
+    display: none;
+}
+.sidenav{
+    height: 0;
+    width: 100vw;
+    position: fixed;
+    z-index: 60;
+    top: 50px;
+    background: #E5E5E5;
+    overflow-y: hidden;
+    display: flex;
+    transition: 0.5s;
+}
+
+.search-nav{
+    width: 55vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.search-container {
+    margin: 20px 0;
+}
+.search-container input[type="text"] { 
+    font-family: 'Pathway Gothic One', sans-serif; 
+    font-size: 15px; 
+    padding: 8px 10px;
+    width: 42vw;
+    border: 2px solid #E5E5E5;
+    border-radius: 10px;
+}
+.search-nav .search-container button {
+    font-family: 'Pathway Gothic One', sans-serif;
+    padding: 8px 10px;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.search-nav .search-container button:hover{
+    color: #FCA311;
+    background: #14213D;
+}
+.about-blogger{
+    width: 40vw;
+}
+.search-nav .sidebar-nav nav ul{
+    display: grid;
+    grid-column-gap: 4vw;
+    grid-row-gap: 12px;
+    grid-template-columns: auto auto auto;
+}
+.search-nav .sidebar-nav nav ul li{
+    list-style: none;
+    padding: 0;
+}
+
+.search-nav .sidebar-nav nav ul li a{
+    color: black;
+    text-decoration: none;
+    font-family: 'Crete Round', serif;
+}
+.search-nav .sidebar-nav nav ul li a:hover{
+    color: #FCA311;
+}
+.sidenav .closebtn img{
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    border: 1px solid white;
+}
+/* Header Intro Starts */
+
+header .intro{
+    width: 100vw;
+    height: 500px;
+    background: #14213D;
+    position: relative;
+    top: 50px;
+}
+.intro-heading{
+    margin: auto;
+    padding: 130px 0 0 0;
+    text-align: center;
+}
+header .intro .intro-heading h1.title{
+    font-family: 'Russo One', sans-serif;
+    font-size: 36px;
+    color: #E5E5E5;
+}
+span.last-title{
+    color: #FCA311;
+}
+header .intro .intro-heading p{
+    font-family: 'Pathway Gothic One', sans-serif;
+    color: #E5E5E5;
+}
+header .intro .intro-button{
+    text-align: center;
+    padding: 50px 0 0 0;
+}
+
+section {
+    margin: 100px 5px;
+}
+h3.post-types{
+    font-family: 'Russo One', sans-serif;
+    font-size: 30px;
+    font-weight: bolder;
+    position: relative;
+}
+h3.post-types::after{
+    content: "";
+    background: #14213D;
+    width: 90px;
+    height: 5px;
+    position: absolute;
+    left: 30px;
+    bottom: 6px;
+}
+.bottom-line{
+    background: #14213D;
+    width: 60px;
+    height: 5px;
+    margin: 0 0 0 30px;
+}
+h3.post-types{
+    padding: 10px 30px;
+}
+
+section .blog-posts .blog-posts-container {
+    width: 90vw;
+    margin: 15px auto;
+    border: 2px solid white;
+}
+section .blog-posts .blog-posts-container:hover {
+    box-shadow: black 5px 5px;
+}
+section .blog-posts .blog-posts-container .image-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+}
+.blog-posts-left {
+    width: 100%;
+    width: 100%;
+    position: relative;
+}
+.blog-posts .blog-posts-left img{
+    width: 100%;
+    object-fit: cover;
+        max-width: 100%;
+        max-height: 200px;
+        border-radius: 10px;
+}
+.blog-posts .blog-posts-left img:hover{
+    opacity: 0.5;
+}
+.blog-posts-right{
+    padding-left: 8px;
+    margin-top: 10px;
+    width: 100%;
+}
+.blog-posts-container .image-buttons{
+    display: grid;
+    grid-row-gap: 5px;
+    position: absolute;
+    top: 9px;
+    right: 9px;
+}
+.blog-posts-right .blog-posts-snippet{
+    width: 100%;
+}
+.image-buttons a svg{
+    color: #E5E5E5;
+    background: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 4px;
+    width: 25px;
+}
+.image-buttons a:hover svg{
+    background: #E5E5E5;
+    color: black;
+}
+button#target{
+        background: transparent;
+        border: none;
+}
+button#target:hover{
+    cursor: pointer;
+}
+.image-buttons button svg{
+    color: #E5E5E5;
+    background: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 4px;
+    width: 25px;
+}
+.image-buttons button:hover svg{
+    background: #E5E5E5;
+    color: black;
+}
+.blog-posts-buttons .buttons2{
+    margin: auto;
+}
+.buttons .blog-posts-buttons{
+    padding: 0;
+}
+.hidden-share{
+    display: flex;
+    justify-content: center;
+    align-items: center ;
+    padding: 10px 5px;
+}
+.hidden-share ul{
+    list-style: none;
+}
+.dropdown-parent2{
+    position: absolute;
+}
+.parent-share{
+    width: 35px;
+    display: none;
+    height: 100px;
+    border-radius: 3px;
+    overflow-y: hidden;
+    z-index: 50;
+    top: -15px;
+    left: -6px;
+    background: white;
+    box-shadow: 3px 1px 10px -3px rgba(0,  0, 0, 0.5);
+    position: relative;
+    transition: 0.1s;
+}
+.dropdown-parent2:hover .parent-share{
+    display: inline-block;
+}
+
+.blog-posts-right .heading-labels h2{
+    font-family: 'Crete Round', serif;
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.blog-posts-right .heading-labels .labels ul{
+    list-style: none;
+    display: flex;
+}
+.blog-posts-right .heading-labels .labels ul li a{
+    text-decoration: none;
+    color: #14213D;
+    padding: 3px;
+}
+.in-line{
+    padding: 3px;
+}
+
+.blog-posts-right .blog-posts-snippet {
+    width: 100%;
+    padding: 15px 0;
+    text-align: justify;
+}
+.buttons .blog-posts-buttons{
+    margin: 20px 5px;
+    width: 90vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 60px 5px 20px;
+}
+/* footer */
+footer .footer-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 105px;
+    border-radius: 25px 25px 0 0 ;
+    border: 2px solid white;
+}
+.footer-cont-left ul{
+    display: grid;
+    grid-column-gap: 1px;
+    grid-row-gap: 8px;
+    grid-template-columns: auto auto auto;
+    margin-left: 11px;
+    margin-top: 10px;
+}
+.footer-cont-left ul li, .footer-cont-right ul li{
+    list-style: none;
+    color:  black;
+}
+.footer-cont-left ul li a{
+    padding: 5px;
+    color: black;
+    text-decoration:  none;
+}
+.footer-cont-left ul li a:hover{
+    color: #FCA311 ;
+}
+
+.footer-cont-left ul li a svg{
+    width: 20px;
+}
+.footer-cont-right ul li a{
+    color: black;
+}
+.footer-cont-right ul li a{
+    text-decoration: none;
+    color: black;
+}
+.footer-cont-right ul li a:hover{
+    color: #FCA311;
+}
+/* featured post */
+.blog-post-container{
+    padding-top: 60px;
+    }
+    .featured-post-container {
+    margin: 80px auto 0 auto;
+    }
+    .post-summary {
+    width: 88vw;
+    margin: 30px auto;
+    position: relative;
+    }
+    .post-summary img{
+    width: 100%;
+    object-fit: contain;
+    }
+    .featured-shadow-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 99%;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2), transparent) ;
+    }
+    h2.title2{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    font-family: 'Russo One';
+    font-size: 10px;
+    font-weight: 1;
+    background: #FCA311;
+    padding: 0 2px;
+    color: black;
+    text-transform: uppercase;
+    }
+    .featured-shadow-background h3{
+    position: absolute;
+    top: 32%;
+    left: 5%;
+    }
+    .featured-shadow-background h3 a{
+    color: #E5E5E5;
+    text-decoration: none;
+    font-family: 'Crete Round';
+    font-weight: 100;
+    }
+    .featured-shadow-background p{
+    color: rgba(229, 229, 229, 0.7);
+    position: absolute;
+    width: 28%;
+    left: 5%;
+    top: 41%;
+    text-align: justify;
+    }
+    a.read-more2{
+    position: absolute;
+    top: 65%;
+    left: 5%;
+    background: transparent;
+    color: #E5E5E5;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Times New Roman';
+    border: 2px solid #E5E5E5;
+    padding: 5px 15px;
+    transition: border 0.5s;
+    }
+    a.read-more2:hover{
+    border: 2px solid #FCA311;
+    }
+
+/* Popular posts */
+.widget-content.popular-posts{
+    margin: 40px auto;
+    width: 90vw;
+    display: block;
+    }
+    .popular-posts ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 10px;
+    }
+    .popular-posts.widget-content ul li{
+    padding: 0;
+    }
+    .item-thumbnail-only{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    }
+    .item-thumbnail-only:hover{
+    box-shadow: 5px 5px 0 0 black;
+    }
+    .popular-posts .item-thumbnail{
+    float: none;
+    margin: 0;
+    }
+    .item-thumbnail a img{
+    border-radius: 5px;
+    padding: 0;
+    }
+    .popular-posts .item-title {
+    padding: 0;
+    }
+    .item-title a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Crete Round';
+    }
+    h2.title{
+        font-family: 'Russo One', sans-serif;
+        font-size: 30px;
+        font-weight: bolder;
+        position: relative;
+        margin-left: 15px;
+        padding-top: 8px;
+        }
+        h2.title::after{
+        content: "";
+        background: #14213D;
+        width: 90px;
+        height: 5px;
+        position: absolute;
+        left: 0px;
+        bottom: -2px;
+        }
+    /* Contact Us */
+.bsection-contact-us-form{
+    width: 90vw;
+    margin: auto;
+    }
+    .contact-form-widget {
+    width: 60vw;
+    margin: 25px auto;
+    max-width: unset;
+    }
+    .contact-form-name, .contact-form-email{
+    max-width: unset;
+    height: 38px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding-left: 5px;
+    border-radius: 5px;
+    width: 100%;
+    }
+    .contact-form-email-message{
+    max-width: unset;
+    height: 150px;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 15px;
+    letter-spacing: 1px;
+    padding-left: 5px;
+    border-radius: 5px;
+    width: 100%;
+    }
+    .contact-form-name:hover, .contact-form-email:hover, .contact-form-email-message:hover{
+    border: 1px solid #FCA311;
+    }
+    .contact-form-button-submit {
+    background: #000000;
+    padding: 5px;
+    margin: 20px 0 0 0;
+    height: unset;
+    border: 2px solid #000000;
+    color: #E5E5E5;
+    font-family: 'Times New Roman';
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 15px;
+    width: 30%;
+    cursor: pointer;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+    }
+    .contact-form-button-submit:hover{
+    color: #000000;
+    background: transparent;
+    border: transparent 2px solid;
+    }
+/* Intro Button */
+a.button{
+    text-decoration: none;
+    color: #E5E5E5;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid #E5E5E5;
+    padding: 9px 15px;
+}
+a.button:hover{
+    color: #14213D;
+    background: #E5E5E5;
+}
+/* Posts */
+
+.blog-posts-buttons .buttons1 a {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    border: 2px solid #E5E5E5;
+    text-transform: uppercase;
+    padding: 5px 15px;
+} 
+.blog-posts-buttons .buttons1 a:hover{
+    color: white;
+    background: black;
+    border: black solid 2px;
+    border-radius: 5px;
+}
+a.read-more{
+    text-decoration: none;
+    color: white;
+    background: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: 3px black solid;
+    border-radius: 5px;
+    padding: 5px 15px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+a.read-more:hover{
+    color: black;
+    background: #E5E5E5;
+    border: #E5E5E5 solid 3px;
+}
+@media screen and (max-width: 1070px) {
+  .popular-posts ul {
+    grid-template-columns: auto auto auto;
+  }
+}
+@media screen and (max-width: 815px) {
+  /* top-nav */
+  .top-nav .top-left nav {
+    display: none;
+  }
+  /* sidebar */
+  .sidenav {
+    flex-direction: column;
+  }
+  .search-nav {
+    width: 100vw;
+    margin-bottom: 50px;
+  }
+  .search-nav .search input[type="text"] {
+    width: 80vw;
+  }
+  /* featured post */
+  .featured-shadow-background h3 {
+    top: 25%;
+    left: 3%;
+  }
+  .featured-shadow-background p {
+    left: 3%;
+    width: 65%;
+  }
+  .featured-shadow-background a.read-more2 {
+    top: unset;
+    left: 3%;
+    bottom: 10%;
+  }
+  .contact-form-widget {
+    width: 80vw;
+  }
+}
+@media screen and (max-width: 799px) {
+  .popular-posts ul {
+    grid-template-columns: auto auto;
+  }
+}
+@media screen and (max-width: 520px) {
+  /* sidenav */
+  .search-nav .search input[type="text"] {
+    width: 80vw;
+  }
+  .search-nav .sidebar-nav nav ul {
+    grid-template-columns: auto auto;
+  }
+  /* Blog posts */
+  .buttons2 {
+    width: 85vw;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  a.read-more {
+    padding: 5px 15%;
+  }
+  /* featured post */
+  .post-summary {
+    width: 90vw;
+  }
+  .featured-shadow-background h3 {
+    top: 20%;
+  }
+  .featured-shadow-background h3 a {
+    font-size: 12px;
+  }
+  .featured-shadow-background p {
+    font-size: 12px;
+    top: 37%;
+  }
+  .featured-shadow-background a.read-more2 {
+    padding: 3px 10px;
+    bottom: 6%;
+    font-size: 10px;
+  }
+  .popular-posts ul {
+    grid-template-columns: auto;
+  }
+  .item-thumbnail-only {
+    align-items: center;
+  }
+}
+
+
+
+
+
+</style>
+
+</head>
+
+<body>
+    <div class="top-nav">
+        <div class="top-left">
+            <h3 class="alpha">Alpha</h3>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="top-right">
+            <a href="javascript:void(0)" class="menu" id="menu-btn" onclick="openNav()"><img src="/images/menu1.png"
+                    alt=""></a>
+            <a href="javascript:void(0)" id="menu-close-btn" class="closebtn" onclick="closeNav()"><img
+                    src="/images/close.png" alt=""></a>
+        </div>
+
+
+
+
+    </div>
+
+    <!-- Sidenav -->
+    <div id="MySideNav" class="sidenav">
+        <div class="search-nav">
+            <div class="search-container">
+                <input type="text" placeholder="Search this site ...">
+                <button type="submit">Search</button>
+            </div>
+            <div class="sidebar-nav">
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Books</a></li>
+                        <li><a href="#">Programming</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms and conditions</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="about-blogger">
+        </div>
+    </div>
+
+
+    <header>
+        <div class="intro">
+            <div class="intro-heading">
+                <h1 class="title">Programming with Alpha</h3>
+                    <p>The description of your website goes over here. Short description, usually.</p>
+            </div>
+            <div class="intro-button">
+                <a href="#" class="button">Explore</a>
+            </div>
+        </div>
+    </header>
+    <main>
+
+<!-- FEATURED POST SECTION -->
+<div class='blog-post-container section' id='bsection-blog1' name='Posts Body'><div class='widget FeaturedPost' data-version='1' id='FeaturedPost1'>
+    <div class='post-summary'>
+    <img class='image' src='https://source.unsplash.com/1600x900/?artificial-intelligence'/>
+    <div class='featured-shadow-background'>
+    <h2 class='title2'>Featured post</h2>
+    <h3><a href='#'>THIS MUST BE FEATURED POST...</a></h3>
+    <p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque nemo, incidunt voluptatem repellendus sequi illum ma...
+    </p>
+    <a class='read-more2' href='#'>Read More</a>
+    </div>
+    </div>
+    <style type='text/css'>
+        .image {
+          width: 100%;
+        }
+      </style>
+    </div>
+            <section>
+                <div class="blog-posts">
+                    <div class="featured-heading">
+                        <h3 class="post-types">Recent Posts</h3>
+                    </div>
+                    <div class="blog-posts-container">
+                        <div class="image-text">
+                            <div class="blog-posts-left">
+                                <img src="https://source.unsplash.com/1600x900/?avengers" alt="">
+                                <div class="image-buttons">
+
+                                    <a href="#"><svg id="hide" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
+                                        </svg></a>
+
+                                    <div class="dropdown-parent">
+                                        <div class="dropdown-parent2">
+                                            <button id="target">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z" />
+                                                </svg>
+                                            </button>
+                                            <div class="parent-share" id="HiddenShare">
+                                                <div class="hidden-share">
+                                                    <ul>
+                                                        <li><a href="#Instagram"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                    fill="currentColor" viewBox="0 0 16 16">
+                                                                    <path
+                                                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                                                                </svg></a></li>
+                                                        <li><a href="#Facebook"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                    fill="currentColor" viewBox="0 0 16 16">
+                                                                    <path
+                                                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                                                </svg></a></li>
+                                                        <li><a href="#Twitter"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                    fill="currentColor" viewBox="0 0 16 16">
+                                                                    <path
+                                                                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                                                                </svg></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-posts-right">
+                                <div class="heading-labels">
+                                    <h2>Avengers Assemble</h2>
+                                    <div class="labels">
+                                        <ul>
+                                            <li><img src="/images/label.png" alt=""></li>
+                                            <li class="in-line"><a href="#">Label</a></li>
+                                            <li class="in-line"><a href="#">Tags</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="blog-posts-snippet">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, mollitia
+                                        nobis, porro
+                                        suscipit quod culpa sit velit asperiores odio vero unde illo ipsa alias
+                                        natus
+                                        voluptatem eligendi ipsam officia possimus necessitatibus perspiciatis
+                                        tenetur
+                                        laborum. Nemo, praesentium veritatis non numquam placeat mollitia velit
+                                        possimus
+                                        odit maxime alias cum! Itaque numquam ab laborum ullam odit. Distinctio
+                                        reiciendis
+                                        obcaecati, officia ea eveniet porro dignissimos! Quidem libero reprehenderit
+                                        omnis
+                                        magni mollitia explicabo, aperiam amet.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="blog-posts-buttons">
+                                <div class="buttons2">
+                                    <a href="#" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-posts-container">
+                        <div class="image-text">
+                            <div class="blog-posts-left">
+                                <img src="https://source.unsplash.com/1600x900/?batman" alt="">
+                                <div class="image-buttons">
+
+                                    <a href="#"><svg id="hide" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
+                                        </svg></a>
+
+                                    <div class="dropdown-parent">
+                                        <div class="dropdown-parent2">
+                                            <button id="target">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z" />
+                                                </svg>
+                                            </button>
+                                            <div class="parent-share" id="HiddenShare">
+                                                <div class="hidden-share">
+                                                    <ul>
+                                                        <li><a href="#Instagram"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                    fill="currentColor" viewBox="0 0 16 16">
+                                                                    <path
+                                                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                                                                </svg></a></li>
+                                                        <li><a href="#Facebook"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                    fill="currentColor" viewBox="0 0 16 16">
+                                                                    <path
+                                                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                                                </svg></a></li>
+                                                        <li><a href="#Twitter"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                    fill="currentColor" viewBox="0 0 16 16">
+                                                                    <path
+                                                                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                                                                </svg></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-posts-right">
+                                <div class="heading-labels">
+                                    <h2>I am Vengeance</h2>
+                                    <div class="labels">
+                                        <ul>
+                                            <li><img src="/images/label.png" alt=""></li>
+                                            <li class="in-line"><a href="#">Label</a></li>
+                                            <li class="in-line"><a href="#">Tags</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="blog-posts-snippet">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, mollitia
+                                        nobis, porro
+                                        suscipit quod culpa sit velit asperiores odio vero unde illo ipsa alias
+                                        natus
+                                        voluptatem eligendi ipsam officia possimus necessitatibus perspiciatis
+                                        tenetur
+                                        laborum. Nemo, praesentium veritatis non numquam placeat mollitia velit
+                                        possimus
+                                        odit maxime alias cum! Itaque numquam ab laborum ullam odit. Distinctio
+                                        reiciendis
+                                        obcaecati, officia ea eveniet porro dignissimos! Quidem libero reprehenderit
+                                        omnis
+                                        magni mollitia explicabo, aperiam amet.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="blog-posts-buttons">
+                                <div class="buttons2">
+                                    <a href="#" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="blog-posts-container">
+                        <div class="image-text">
+                            <div class="blog-posts-left">
+                                <img src="https://source.unsplash.com/1600x900/?groot" alt="">
+                                <div class="image-buttons">
+
+                                    <a href="#"><svg id="hide" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                            viewBox="0 0 16 16">
+                                            <path
+                                                d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
+                                        </svg></a>
+
+                                    <div class="dropdown-parent">
+                                        <div class="dropdown-parent2">
+                                            <button id="target" type="button">
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                                    viewBox="0 0 16 16">
+                                                    <path
+                                                        d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z" />
+                                                </svg>
+                                            </button>
+                                            <div class="parent-share" id="HiddenShare">
+                                                <div class="hidden-share">
+                                                    <ul>
+                                                        <li><a href="#Instagram"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                    fill="currentColor" viewBox="0 0 16 16">
+                                                                    <path
+                                                                        d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                                                                </svg></a></li>
+                                                        <li><a href="#Facebook"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                    fill="currentColor" viewBox="0 0 16 16">
+                                                                    <path
+                                                                        d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                                                                </svg></a></li>
+                                                        <li><a href="#Twitter"><svg xmlns="http://www.w3.org/2000/svg"
+                                                                    fill="currentColor" viewBox="0 0 16 16">
+                                                                    <path
+                                                                        d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                                                                </svg></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="blog-posts-right">
+                                <div class="heading-labels">
+                                    <h2>I am Groot</h2>
+                                    <div class="labels">
+                                        <ul>
+                                            <li><img src="/images/label.png" alt=""></li>
+                                            <li class="in-line"><a href="#">Label</a></li>
+                                            <li class="in-line"><a href="#">Tags</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="blog-posts-snippet">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, mollitia
+                                        nobis, porro
+                                        suscipit quod culpa sit velit asperiores odio vero unde illo ipsa alias
+                                        natus
+                                        voluptatem eligendi ipsam officia possimus necessitatibus perspiciatis
+                                        tenetur
+                                        laborum. Nemo, praesentium veritatis non numquam placeat mollitia velit
+                                        possimus
+                                        odit maxime alias cum! Itaque numquam ab laborum ullam odit. Distinctio
+                                        reiciendis
+                                        obcaecati, officia ea eveniet porro dignissimos! Quidem libero reprehenderit
+                                        omnis
+                                        magni mollitia explicabo, aperiam amet.</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="buttons">
+                            <div class="blog-posts-buttons">
+                                <div class="buttons2">
+                                    <a href="#" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- POPULAR POSTS -->
+
+            <div class='widget PopularPosts' data-version='1' id='PopularPosts1'>
+                <h2 class='title'>Popular Posts</h2>
+                <div class='widget-content popular-posts'>
+                <ul>
+                <li>
+                <div class='item-thumbnail-only'>
+                <div class='item-thumbnail'>
+                <a href='https://iameverything17.blogspot.com/2021/11/post-number-1.html'>
+                <img alt='' src='https://lh5.googleusercontent.com/proxy/-q1Krrm3t7gGVONWjf6rXCq-9xSJEwUdL70z9iOuNmPNqUGLw1VQRmNHHYI_ezEbhm4SpBrfq1Ywv5bDNvHJ=w200-h200-p-k-no-nu'/>
+                </a>
+                </div>
+                <div class='item-title'><a href='https://iameverything17.blogspot.com/2021/11/post-number-1.html'>POST NUMBER 1</a></div>
+                </div>
+                <div style='clear: both;'></div>
+                </li>
+                <li>
+                <div class='item-thumbnail-only'>
+                <div class='item-thumbnail'>
+                <a href='https://iameverything17.blogspot.com/2021/12/this-must-be-featured-post.html'>
+                <img alt='' src='https://lh3.googleusercontent.com/proxy/bf29Ju1uMyA-6tf9IaupDBP1n6VdyXLo_rbzPrASONBlQl3NM92toTpnT1zjJaokg1CdNNfoHssfxFsZMZ5umgxKpCeFPKV1LLLja_o5boFd=w200-h200-p-k-no-nu'/>
+                </a>
+                </div>
+                <div class='item-title'><a href='https://iameverything17.blogspot.com/2021/12/this-must-be-featured-post.html'>THIS MUST BE FEATURED POST...</a></div>
+                </div>
+                <div style='clear: both;'></div>
+                </li>
+                <li>
+                <div class='item-thumbnail-only'>
+                <div class='item-thumbnail'>
+                <a href='https://iameverything17.blogspot.com/2021/11/post-number-3-no-images.html'>
+                <img alt=''  src='https://lh6.googleusercontent.com/proxy/hDekPsoFY3OFGpUMckO0VbjsSf37ac2Rg7WhOeRgwV-j7E4FdUaFCekmzc7jLcDfcfbpxT0e8ykdgzUoPyljLQ=w200-h200-p-k-no-nu'/>
+                </a>
+                </div>
+                <div class='item-title'><a href='https://iameverything17.blogspot.com/2021/11/post-number-3-no-images.html'>POST NUMBER 3 - AURORA</a></div>
+                </div>
+                <div style='clear: both;'></div>
+                </li>
+                <li>
+                <div class='item-thumbnail-only'>
+                <div class='item-thumbnail'>
+                <a href='https://iameverything17.blogspot.com/2021/11/post-number-2-no-labels.html'>
+                <img alt='' src='https://lh4.googleusercontent.com/proxy/r9KFF2hI_ofEoKt_Dno6svXWg8263jgavcQwLnSL4bAidll8RhYphT7RztvXgyzf28XEzdqndXKfCI0NShqCmc8=w200-h200-p-k-no-nu'/>
+                </a>
+                </div>
+                <div class='item-title'><a href='https://iameverything17.blogspot.com/2021/11/post-number-2-no-labels.html'>POST NUMBER 2 - I AM GROOT</a></div>
+                </div>
+                <div style='clear: both;'></div>
+                </li>
+                </ul>
+                <div class='clear'></div>
+                </div>
+                </div></div>
+
+
+                <!-- CONTACT US FORM -->
+<div class='bsection-contact-us-form section' id='bsection-contact1' name='Contact Us'><div class='widget ContactForm' data-version='1' id='ContactForm1'>
+    <h2 class='title'>Contact Us</h2>
+    <div class='contact-form-widget'>
+    <div class='form'>
+    <form name='contact-form'>
+    <p></p>
+    <br/>
+    <input class='contact-form-name' id='ContactForm1_contact-form-name' name='name' placeholder='Your Name' size='30' type='text' value=''/>
+    <p></p>
+    <br/>
+    <input class='contact-form-email' id='ContactForm1_contact-form-email' name='email' placeholder='Your Valid Email' size='30' type='text' value=''/>
+    <p></p>
+    <br/>
+    <textarea class='contact-form-email-message' cols='25' id='ContactForm1_contact-form-email-message' name='email-message' placeholder='Your Message' rows='5'></textarea>
+    <p></p>
+    <input class='contact-form-button contact-form-button-submit' id='ContactForm1_contact-form-submit' type='button' value='Send'/>
+    <p></p>
+    <div style='text-align: center; max-width: 222px; width: 100%'>
+    <p class='contact-form-error-message' id='ContactForm1_contact-form-error-message'></p>
+    <p class='contact-form-success-message' id='ContactForm1_contact-form-success-message'></p>
+    </div>
+    </form>
+    </div>
+    </div>
+    <div class='clear'></div>
+    </div></div>
+
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-cont-left">
+                <h4>Reach Us On</h4>
+                <ul>
+                    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+                            </svg></a></li>
+                    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                            </svg></a></li>
+                    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                            </svg></a></li>
+                </ul>
+            </div>
+            <div class="footer-cont-right">
+                <ul>
+                    <li><a href="#">Terms & conditions</a></li>
+                    <li><a href="#">Copyright</a> &copy; 2021</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+<script>
+    function openNav() {
+    document.getElementById("MySideNav").style.height = "50vh";
+    document.getElementById("menu-btn").style.display = "none";
+    document.getElementById("menu-close-btn").style.display = "block";
+}
+function closeNav() {
+    document.getElementById("MySideNav").style.height = "0";
+    document.getElementById("menu-btn").style.display = "block";
+    document.getElementById("menu-close-btn").style.display = "none";
+}
+const string=document.querySelector('h1.title');
+const wordsOfStringArray = string.innerHTML.split(' ');
+const lastWordOfString = wordsOfStringArray.pop();
+const newStringHTML = `
+${wordsOfStringArray.join(' ')}<span class="last-title"> ${lastWordOfString}</span>
+`;
+string.innerHTML = newStringHTML;
+</script>
+</body>
+
+</html>
