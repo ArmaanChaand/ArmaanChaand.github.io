@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="We're coming soon...">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index, follow">
+    <title>ScoreItLive</title>
+    <!-- OG Tags -->
+    <meta property="og:title" content="ScoreItLive">
+    <meta property="og:description" content="We're coming soon...">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ScoreItLivw">
+    <!-- FAVICON -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- CSS Stylesheets -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100dvh;
+            background: linear-gradient(135deg, #0A0A0A, #CC1B41);
+            color: #ddd;
+            text-align: center;
+        }
+
+        .coming-soon-container {
+            max-width: 600px;
+            padding: 4rem;
+            background: rgba(0, 0, 0, 0.85);
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+
+
+        @media only screen and (max-width: 640px) {
+            .coming-soon-container {
+                padding: 4rem 1rem;
+            }
+            p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="coming-soon-container">
+        <h1>Coming Soon!</h1>
+        <p>We're working hard to make ScoreItLive amazing.<br />
+            Launching in <span id="countdown-timer">00:00:00</span>
+        </p>
+    </div>
+
+    <script>
+        const targetDate = new Date('2024-11-01T00:00:00').getTime();
+
+        function padWithZeroes(num) {
+            return num.toString().padStart(2, '0');
+        }
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const timeLeft = targetDate - now;
+
+            const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown-timer").innerHTML =
+                `${padWithZeroes(days)}:${padWithZeroes(hours)}:${padWithZeroes(minutes)}:${padWithZeroes(seconds)}`;
+
+            if (timeLeft < 0) {
+                document.getElementById("countdown-timer").innerHTML = "Launched!";
+            }
+        }
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+
+</html>
